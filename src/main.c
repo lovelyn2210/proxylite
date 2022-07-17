@@ -82,11 +82,7 @@ int main(int argc, char *argv[])
     signal(SIGTERM, sigproc);
 #ifndef _WIN32
     signal(SIGPIPE, SIG_IGN);
-    if (!getuid() || !geteuid())
-    {
-        printf("This program cannot be run as root.\n");
-        exit(3);
-    }
+    
 #endif
 
     if (argc > 1)
